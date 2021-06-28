@@ -1,11 +1,12 @@
-spring:
-  profiles:
-    active: "admin"
-    
 hr:
   raise:
+    year:
+     yearsArray: 2020,2017,2015,1999
     def:
       percent: 5
     smart:
       limits: 10.0,5.0,2.5
       raiseLimits: 10,5,2
+spring:
+ profiles:
+  active: admin

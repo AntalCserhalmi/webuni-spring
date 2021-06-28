@@ -34,5 +34,4 @@ public class SmartEmployeeService implements EmployeeService {
 		return raisePercent;
 	
 	}
-
 }

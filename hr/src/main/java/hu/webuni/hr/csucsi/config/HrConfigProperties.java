@@ -20,6 +20,14 @@ public class HrConfigProperties {
 	public static class Raise{
 		private Default def = new Default();
 		private Smart smart = new Smart();
+		private Years year = new Years();
+		
+		public Years getYear() {
+			return year;
+		}
+		public void setYear(Years year) {
+			this.year = year;
+		}
 		public Default getDef() {
 			return def;
 		}
@@ -62,6 +70,18 @@ public class HrConfigProperties {
 		}
 		public void setLimits(double[] limits) {
 			this.limits = limits;
+		}
+	}
+	
+	public static class Years{
+		private int[] yearsArray;
+
+		public int[] getYearsArray() {
+			return yearsArray;
+		}
+
+		public void setYearsArray(int[] yearsArray) {
+			this.yearsArray = yearsArray;
 		}
 	}
 
