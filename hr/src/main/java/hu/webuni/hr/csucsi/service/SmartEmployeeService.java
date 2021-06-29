@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
+import java.time.temporal.ChronoUnit;
 
 import hu.webuni.hr.csucsi.config.HrConfigProperties;
 import hu.webuni.hr.csucsi.model.Employee;
@@ -20,7 +21,8 @@ public class SmartEmployeeService implements EmployeeService {
 		final int[] percent = config.getRaise().getSmart().getRaiseLimits();
 		final double[] limit = config.getRaise().getSmart().getLimits();
 		
-		double workOfYears = LocalDateTime.now().compareTo(employee.getStartOfWork());
+		double workOfYears = (ChronoUnit.DAYS.between(employee.getStartOfWork(),LocalDateTime.now())) / 365d;
+		
 		int raisePercent; 
 		if(workOfYears >= limit[0])
 			raisePercent = percent[0];
